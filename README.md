@@ -1,2 +1,3 @@
-# gh-actions-test
-Test repository while I'm learning about Github Actions
+# GitHub Actions Test
+
+Test repository while I'm learning about Github Actions.
