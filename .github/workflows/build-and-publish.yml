@@ -18,4 +18,4 @@ jobs:
       - name: Install dependencies
         run: echo Installing dependences
       - name: Getting event data
-        run: echo ${{ toJSON(github.event) }}
+        run: echo '${{toJSON(github.event)}}'
