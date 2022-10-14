@@ -17,12 +17,14 @@ jobs:
           python-version: '3.10'
       - name: Check MAJOR changes
         if: "startsWith(github.event.pull_request.title, 'feat!:')"
-        run: echo "VERSION_COMPONENT=--major" >> env.GITHUB_ENV
+        run: echo "VERSION_COMPONENT=--major" >> $GITHUB_ENV
       - name: Check MINOR changes
         if: "startsWith(github.event.pull_request.title, 'feat:')"
-        run: echo "VERSION_COMPONENT=--minor" >> env.GITHUB_ENV
+        run: echo "VERSION_COMPONENT=--minor" >> $GITHUB_ENV
       - name: Check PATCH changes
         if: "startsWith(github.event.pull_request.title, 'fix:')"
-        run: echo "VERSION_COMPONENT=--patch" >> env.GITHUB_ENV
+        run: echo "VERSION_COMPONENT=--patch" >> $GITHUB_ENV
+      - name: Print VERSION_COMPONENT env
+        run: echo ${{ env.VERSION_COMPONENT }}
       - name: Bump version
-        run: bumpver update --env.VERSION_COMPONENT
+        run: bumpver update --${{ env.VERSION_COMPONENT }}
