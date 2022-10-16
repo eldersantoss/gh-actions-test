@@ -33,7 +33,3 @@ jobs:
       - name: Bump version
         run: |
           bumpver update --${{ env.VERSION_COMPONENT }}
-          git add .
-          git commit -m "Bump version"
-          git push origin main
-
