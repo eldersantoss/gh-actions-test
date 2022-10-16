@@ -32,4 +32,6 @@ jobs:
         run: echo ${{ env.VERSION_COMPONENT }}
       - name: Bump version
         run: |
+          git config --global user.email "elder_rn@hotmail.com"
+          git config --global user.name "Elder Santos"
           bumpver update --${{ env.VERSION_COMPONENT }}
